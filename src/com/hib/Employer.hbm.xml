@@ -4,12 +4,12 @@
 		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="bean.Employer" table="EMPLOYER">
-		
+
 		<id name="ID" type="java.lang.Integer">
 			<column name="ID" length="20" />
 			<generator class="assigned"></generator>
 		</id>
-		
+
 		<property name="EId" type="java.lang.Integer">
 			<column name="EID" length="20"/>
 		</property>
@@ -19,7 +19,7 @@
 		<property name="Sex" type="java.lang.String">
 			<column name="SEX" length="20"/>
 		</property>
-		
+
 		<property name="Location" type="java.lang.String">
 			<column name="LOCATION" length="20"/>
 		</property>
@@ -35,35 +35,35 @@
 		<property name="Telephone" type="java.lang.String">
 			<column name="TELEPHONE" length="20"/>
 		</property>
-		
+
 		<property name="Age" type="java.lang.Integer">
 			<column name="AGE" length="20"/>
 		</property>
-		
+
 		<property name="Birthday" type="java.lang.String">
 			<column name="BIRTH" length="20"/>
 		</property>
 		<property name="Notes" type="java.lang.String">
 			<column name="NOTES" length="100"/>
 		</property>
-		
+
 		<property name="offerTime" type="java.lang.String">
 			<column name="OFFERTIME" length="20"/>
 		</property>
-		
+
 		<property name="status" type="java.lang.Integer">
 			<column name="STATUS" length="20"/>
 		</property>
-		
+
 		<property name="password" type="java.lang.String">
 			<column name="PASSWORD" length="20"/>
 		</property>
-		
+
 		<property name="IconUrl" type="java.lang.String">
 			<column name="ICONURL" length="100"/>
 		</property>
-		
-	
+
+
 	</class>
 
 

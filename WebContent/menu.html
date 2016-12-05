@@ -174,16 +174,16 @@ $(document).ready(function(){
 	var select_type = 0;
 	$('#market').css('background','#CD0000');
 	$('#market').css('color','white');
-	
+
 	$('li a').click(function(){
-		
+
 		$('li a').css('background','white');
 		$('li a').css('color','black');
-		
+
 		$(this).css('background','#CD0000');
 		$(this).css('color','white');
 		var x = $('#inner').css('left');
-		
+
 		if($(this).html()=='Market'){
 			select_type=0;
 		}

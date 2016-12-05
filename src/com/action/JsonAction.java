@@ -14,32 +14,23 @@ import com.opensymphony.xwork2.ActionSupport;
 public class JsonAction extends ActionSupport{
 
 	private static final long serialVersionUID = 1L;
-	
-	EmployerDao employerDao = new EmployerDaoImpl();
-	
+
+	EmployerDao userDao = new UserDaoImpl();
+
 	@SuppressWarnings("unused")
 	private String result;
 
 	public String Search(){
-		
+
 		HttpServletRequest request = ServletActionContext.getRequest();
-		
 		String username = request.getParameter("username");
-		
-		System.out.println("username recieved:"+username);
-		
-		Employer employer = new Employer(username);
-		
-		employer = employerDao.Search(employer);
-		
+		User user = new User(username);
+		user = userDao.Search(user);
+
 		Gson gson = new Gson();
-		
-		result = gson.toJson(employer);
-		
-		System.out.println(result);
-		
+		result = gson.toJson(user);
+
 		return "success";
-		
 	}
 
 	public String getResult() {
@@ -49,5 +40,5 @@ public class JsonAction extends ActionSupport{
 	public void setResult(String result) {
 		this.result = result;
 	}
-	
+
 }
