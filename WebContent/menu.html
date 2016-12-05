@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="jq/jquery-2.1.3.js"></script>
+<style>
+header{
+	margin-left:130px;
+	color:#CD0000;
+}
+#main ul{
+	height:30px;
+	width:242px;
+	padding:0;
+	margin:0;
+	border:1px solid #CD0000;
+}
+#main ul li{
+	float:left;
+	list-style:none;
+	width:80px;
+	line-height:30px;
+	text-align:center;
+	border-right:1px solid #CD0000;
+}
+a{
+	display:block;
+	width:80px;
+	text-decoration:none;
+	font-weight:bold;
+}
+#content{
+	width:400px;
+	height:200px;
+	border:1px solid #CD0000;
+	margin-top:10px;
+	overflow:hidden;
+	position:relative;
+}
+#inner{
+	width:1200px;
+	position:absolute;
+	left:0;
+}
+#inner div{
+	width:400px;
+	height:200px;
+	float:left;
+	display:block;
+}
+.market{
+	background:#87CEEB;
+}
+.goods{
+	background:#EEE685;
+}
+.user{
+	background:#FF82AB;
+}
+footer{
+	margin-top:10px;
+	margin-left:90px;
+	color:#1C1C1C;
+}
+a:hover{
+	background:#CD0000;
+	color:white;
+}
+#market_options span{
+	margin-left:10px;
+	font-size:14px;
+	color:white;
+	cursor:pointer;
+}
+#market_options span:hover{
+	text-decoration:underline;
+}
+#search_name{
+	border:none;
+	border-radius:2px;
+	height:16px;
+	padding-left:3px;
+	width:190px;
+	font-size:12px;
+	outline:none;
+}
+#searchbt{
+	border:1px solid #cd0000;
+	border-radius:2px;
+	background:white;
+	color:#cd0000;
+	outline:none;
+}
+#searchbt:hover{
+	cursor:pointer;
+	color:white;
+	background:#cd0000
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+<header>
+<h1>Carrefour</h1>
+</header>
+
+<nav id="main">
+<ul>
+<li><a href="#" id="market">Market</a></li>
+<li><a href="#" id="goods">Goods</a></li>
+<li style="border-right:none"><a href="#" id="user">User</a></li>
+</ul>
+</nav>
+
+<div id="content">
+<div id="inner">
+
+<div class="market">
+
+<div id="market_options" style="height:30px;padding-left:5px;line-height:30px;border-bottom:1px solid #CD0000;">
+<input type="text" id="search_name">
+<input type="button" id="searchbt" value="Search" style="">
+
+<span>bread</span>
+<span>milk</span>
+<span>apple</span>
+
+</div>
+<div id="search_result" style="background:#B0E2FF;height:169px">
+
+</div>
+
+</div>
+
+<div class="goods">
+
+</div>
+
+<div class="user">
+
+</div>
+</div>
+</div>
+
+<footer>
+Lucky.zhang support the right&copy;
+</footer>
+</div>
+</body>
+<script type="text/javascript">
+function move(select_type){
+	switch(select_type){
+	case 0:
+		$('#inner').animate({
+			left:0
+		},200);
+		break;
+	case 1:
+		$('#inner').animate({
+			left:-400
+		},200);
+		break;
+	case 2:
+		$('#inner').animate({
+			left:-800
+		},200);
+		break;
+	}
+}
+
+$(document).ready(function(){
+	var select_type = 0;
+	$('#market').css('background','#CD0000');
+	$('#market').css('color','white');
+	
+	$('li a').click(function(){
+		
+		$('li a').css('background','white');
+		$('li a').css('color','black');
+		
+		$(this).css('background','#CD0000');
+		$(this).css('color','white');
+		var x = $('#inner').css('left');
+		
+		if($(this).html()=='Market'){
+			select_type=0;
+		}
+		else if($(this).html()=='Goods'){
+			select_type=1;
+		}
+		else{
+			select_type=2;
+		}
+		move(select_type);
+	});
+});
+
+
+</script>
+
+</html>

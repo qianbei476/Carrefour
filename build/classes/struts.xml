@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd" >
+
+
+<struts>
+
+ <package name="LoginModule" extends="struts-default">
+
+	<action name="Login" class="com.action.ViewAction" method="FormLogin">
+		<result name="success">/pages/employerMain.html</result>
+		<result name="failed">/error.html</result>
+	</action>
+</package>
+
+<package name="JsonResolve" extends="json-default">
+	
+	<action name="Search" class="com.action.JsonAction" method="Search">
+		
+		<result name="success" type="json">
+			result
+		</result>
+		
+		<result name="failed">
+		</result>
+	</action>
+</package>
+
+
+</struts>
